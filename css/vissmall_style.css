@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+body{
+	font-family: ‘Noto Sans TC’, sans-serif;
+}
+
+.block{
+	text-align: justify;
+	text-justify:inter-ideograph;
+	color: #FFFFFF;
+	width: 70vw; 
+	margin-right: auto; 
+	margin-left: auto;
+	margin-top: 15vh;
+	margin-bottom: 10vh;
+	background: none;
+}
+
+h3{
+	color: #00ffff; 
+	font-size: 5vw; 
+	line-height: 6vw; 
+	letter-spacing: 0.2vw; 
+}
+
+.backpic{
+	margin: 0;
+	padding: 0; 
+    min-width: 800px;
+    min-height: 100%; 
+    position: fixed;
+    opacity: 0.25;
+    left: : 0px;
+    top: 0px;    
+    z-index: -5;
+    float: right;
+	-moz-background-size: auto 100%;
+    -webkit-background-size: auto 100%;
+    -o-background-size: auto 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-image: url(../imgs/sideline.png);
+}
