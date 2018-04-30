@@ -22,3 +22,6 @@ and copy pasta
 bin/nginx
 
 that should restart nginx with the new configuration.
+
+
+the LTG ip can be configured in sketch.js
