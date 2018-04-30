@@ -14,3 +14,11 @@ to terminal.
 to stop, copy pasta
 
 sudo nginx -s stop
+
+after changing config file in /usr/local/etc/nginx,
+go to /usr/local/Cellar/nginx/1.13.12
+and copy pasta
+
+bin/nginx
+
+that should restart nginx with the new configuration.
