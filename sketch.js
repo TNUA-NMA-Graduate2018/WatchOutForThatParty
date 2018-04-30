@@ -15,7 +15,7 @@ function setup() {
   //canvas.style('display','block');
   background(51, 0);
   //socket = io.connect('10.254.17.39:3000');
-  socket = io.connect('10.254.29.1:3000');
+  socket = io.connect('192.168.0.7:3000');
   socket.on('mouse', newDrawing);
   console.log("Coneected");
   frameRate(60);
