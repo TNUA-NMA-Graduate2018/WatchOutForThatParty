@@ -6,7 +6,7 @@ var buttonA;
 var buttonB;
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
-  socket = io.connect('10.254.17.39:3000');
+  socket = io.connect('10.254.19.90:3000');
   mic = new p5.AudioIn()
   mic.start();
   fft = new p5.FFT();
@@ -17,8 +17,8 @@ function setup() {
   button = createButton('preload');
   button.position(100,65);
   button.mousePressed(greetA);
-  
-    button = createButton('start');
+
+  button = createButton('start');
   button.position(200,65);
   button.mousePressed(greetB);
 }

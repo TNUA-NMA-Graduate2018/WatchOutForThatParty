@@ -4,7 +4,7 @@ var ellipseSize = 0;
 
 var isLoaded = false;
 var glitch;
-var imgSrc = 'imgs/taipei.jpg';
+var imgSrc = 'per_imgs/taipei.jpg';
 var start = false;
 var mode = 0;
 
@@ -15,9 +15,9 @@ function setup() {
   //canvas.style('display','block');
   background(51, 0);
   //socket = io.connect('10.254.17.39:3000');
-  socket = io.connect('192.168.0.7:3000');
+  socket = io.connect('10.254.19.90:3000');
   socket.on('mouse', newDrawing);
-  console.log("Coneected");
+  console.log("LTG Coneected");
   frameRate(60);
 
   loadImage(imgSrc, function(img) {
