@@ -198,8 +198,7 @@
         <logdir>/usr/local/Cellar/icecast/2.4.3/var/log/icecast</logdir>
         <webroot>/usr/local/Cellar/icecast/2.4.3/share/icecast/web</webroot>
         <adminroot>/usr/local/Cellar/icecast/2.4.3/share/icecast/admin</adminroot>
-        <!-- <pidfile>/usr/local/Cellar/icecast/2.4.3/share/icecast/icecast.pid</pidfile> -->
-
+        <!-- <pidfile>/usr/local-->
         <!-- Aliases: treat requests for 'source' path as being for 'dest' path
              May be made specific to a port or bound address using the "port"
              and "bind-address" attributes.
