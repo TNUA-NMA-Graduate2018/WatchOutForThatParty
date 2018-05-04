@@ -37,8 +37,8 @@ function setup() {
   img6 = loadImage("schedule/imgs/06DJTaro.png");
   img7 = loadImage("schedule/imgs/07DJKlone.png");
 
-  socket = io.connect('127.0.0.1:3000');
-  //socket = io.connect('192.168.0.7:3000');
+  socket = io.connect('10.17.0.10:3000');
+    //please change the ip to server ip
   socket.on('schedule', newDrawing);
   socket.on('mouse', newDrawingLTG);
   console.log("schedule Connected");
