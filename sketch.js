@@ -19,10 +19,10 @@ var img6;
 var img7;
 
 function setup() {
-  canvas = createCanvas(windowWidth,windowHeight);
+  canvas = createCanvas(windowWidth, windowHeight);
 
-  canvas.style('z-index','3');
-  var x = windowWidth/2 - width/2;
+  canvas.style('z-index', '3');
+  var x = windowWidth / 2 - width / 2;
   var y = 175;
   //canvas.position(x, y);
   //canvas.style('display','block');
@@ -38,7 +38,7 @@ function setup() {
   img7 = loadImage("schedule/imgs/07DJKlone.png");
 
   socket = io.connect('10.17.0.10:3000');
-    //please change the ip to server ip
+  //please change the ip to server ip
   socket.on('schedule', newDrawing);
   socket.on('mouse', newDrawingLTG);
   console.log("schedule Connected");
@@ -51,15 +51,16 @@ function setup() {
 
 
   background(0);
-  image(bgimg,0,0,width,height);
+  image(bgimg, 0, 0, width, height);
   resizeCanvas(windowWidth, windowHeight);
-  canvas.style('z-index','10');
-  image(img3, width/2 - 250, 175,500,150);
+  canvas.style('z-index', '10');
+  image(img3, width / 2 - 250, 175, 500, 150);
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
 function newDrawingLTG(data) {
   console.log("LTG");
 
@@ -70,7 +71,7 @@ function newDrawingLTG(data) {
     mode = 0;
     start = false;
     isloaded = false;
-    background(100,255,100,0);
+    background(100, 255, 100, 0);
   } else if (data.x == -2) {
     start = true;
     isloaded = false;
@@ -80,54 +81,55 @@ function newDrawingLTG(data) {
     mode = 1;
   }
 }
+
 function newDrawing(data) {
   mode = 0;
   console.log("schedule");
   console.log(data);
   background(0);
-  image(bgimg,0,0,width,height);
+  image(bgimg, 0, 0, width, height);
   resizeCanvas(windowWidth, windowHeight);
-  canvas.style('z-index','3');
+  canvas.style('z-index', '3');
   scheduleMode = data.s;
   switch (scheduleMode) {
     case 0:
-      image(img0, width/2 - 250, 175,500,150);
+      image(img0, width / 2 - 220, 175, 366, 150);
       break;
     case 1:
-      image(img1, width/2 - 250, 175,500,150);
+      image(img1, width / 2 - 220, 175, 350, 150);
       break;
     case 2:
-      image(img2, width/2 - 250, 175,500,150);
+      image(img2, width / 2 - 220, 175, 366, 150);
       break;
     case 3:
-      image(img3, width/2 - 250, 175,500,150);
+      image(img3, width / 2 - 220, 175, 312, 176);
       break;
     case 4:
-      image(img4, width/2 - 250, 175,500,150);
+      image(img4, width / 2 - 220, 175, 632, 150);
       break;
     case 5:
-      image(img5, width/2 - 250, 175,500,150);
+      image(img5, width / 2 - 220, 175, 1161, 175);
       break;
     case 6:
-      image(img6, width/2 - 250, 175,500,150);
+      image(img6, width / 2 - 220, 175, 384, 150);
       break;
     case 7:
-      image(img7, width/2 - 250, 175,500,150);
+      image(img7, width / 2 - 220, 175, 448, 150);
       break;
   }
 }
+
 function draw() {
   if (mode === 0) {
     background(0, 0);
-  }else if(mode === 1){
+  } else if (mode === 1) {
     background(0);
     stroke(0);
     fill(0);
     if (isLoaded) {
       glitch.show();
     }
-  }
-  else if(mode === 2){
+  } else if (mode === 2) {
     ellipseSize -= 30;
     background(ellipseSize);
   }

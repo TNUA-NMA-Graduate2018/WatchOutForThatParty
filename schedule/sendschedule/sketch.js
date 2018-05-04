@@ -28,7 +28,7 @@ function setup() {
 
   button3 = createButton('03message');
   button3.position(150,140);
-  button3.mousePressed(greetD);
+  button3.mousePressed(greetD);  
 
   button4 = createButton('04rainbow');
   button4.position(150,170);
@@ -70,12 +70,21 @@ function greetD() {
     s: 3
   }
   socket.emit('schedule', data);
+
+  var w = document.getElementById("wei");
+  w.style.display='block';
+
+        
 }
 function greetE() {
   var data = {
-    s: 4
+    s: 4 
+   
   }
   socket.emit('schedule', data);
+
+  var w = document.getElementById("wei");
+  w.style.display= 'none';
 }
 function greetF() {
   var data = {
