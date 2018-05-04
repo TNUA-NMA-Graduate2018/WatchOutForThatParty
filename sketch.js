@@ -5,6 +5,8 @@ var ellipseSize = 0;
 var isLoaded = false;
 var glitch;
 var imgSrc = 'per_imgs/taipei.jpg';
+var msgImg;
+
 var start = false;
 var mode = 0;
 var scheduleMode = 0;
@@ -18,6 +20,8 @@ var img5;
 var img6;
 var img7;
 
+var colorRed,colorGreen,colorBlue;
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
 
@@ -28,6 +32,9 @@ function setup() {
   //canvas.style('display','block');
   background(51, 0);
   bgimg = loadImage("schedule/imgs/bg.jpg");
+
+  msgImg = loadImage("per_imgs/msg.jpg");
+
   img0 = loadImage("schedule/imgs/00opentime.png");
   img1 = loadImage("schedule/imgs/01teacher.png");
   img2 = loadImage("schedule/imgs/02talk.png");
@@ -38,7 +45,6 @@ function setup() {
   img7 = loadImage("schedule/imgs/07DJKlone.png");
 
   socket = io.connect('10.17.0.10:3000');
-  //please change the ip to server ip
   socket.on('schedule', newDrawing);
   socket.on('mouse', newDrawingLTG);
   console.log("schedule Connected");
@@ -66,8 +72,13 @@ function newDrawingLTG(data) {
 
   console.log(data);
   ellipseSize = data.x;
-
-  if (data.x == -3) { //reset windows
+  if(data.x === 10){
+    mode = -2;
+  }
+  if(data.x === 0){
+    mode = -1;
+  }
+  else if (data.x === -3) { //reset windows
     mode = 0;
     start = false;
     isloaded = false;
@@ -76,10 +87,16 @@ function newDrawingLTG(data) {
     start = true;
     isloaded = false;
     mode = 2;
-  } else if (data.x == -1) {
+  } else if (data.x === -1) {
     isLoaded = true;
     mode = 1;
+  } else if(data.x === -4){
+    mode = 3;
+    colorRed = data.R;
+    colorGreen = data.G;
+    colorBlue = data.B;
   }
+
 }
 
 function newDrawing(data) {
@@ -120,7 +137,16 @@ function newDrawing(data) {
 }
 
 function draw() {
-  if (mode === 0) {
+  if(mode === -2){
+    background(0, 0);
+    image(msgImg,width/2 - 175,height/2-130,175,45);
+  }
+  else if(mode === -1){
+
+      background(0, 0);
+      image(msgImg,random(0,width-175),random(0,height-45),175,45);
+  }
+  else if (mode === 0) {
     background(0, 0);
   } else if (mode === 1) {
     background(0);
@@ -132,6 +158,11 @@ function draw() {
   } else if (mode === 2) {
     ellipseSize -= 30;
     background(ellipseSize);
+  }
+  else if(mode ===3){
+    ellipseSize -= 30;
+    var ellipseSizeTemp = map(ellipseSize,0,255,0,1);
+    background(colorRed*ellipseSizeTemp,colorGreen*ellipseSizeTemp,colorBlue*ellipseSizeTemp);
   }
 }
 class Glitch {
