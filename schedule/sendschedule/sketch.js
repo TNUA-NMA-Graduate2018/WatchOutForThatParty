@@ -11,7 +11,7 @@ var button6;
 var button7;
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
-  socket = io.connect('10.254.19.90:3000');
+  socket = io.connect('127.0.0.1:3000');
   frameRate(60);
 
   button0 = createButton('00opentime');

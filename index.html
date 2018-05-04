@@ -95,16 +95,15 @@
     .wei{
     text-decoration:none;
     font-size: 4vw;
-    width: 60vw;
-    height: 60vw;
+    width: 20vw;
+    height: 20vw;
     margin: 0;
     padding: 0;
     border: none;
     position: absolute;
-    left: 20vw;
-    top: 19vh;
-    display:none;
-    }
+    right: 10vw;
+    bottom: 5vh;
+	}
 
 	</style>
 
@@ -132,17 +131,14 @@
 	       var butpause=document.getElementById("butpause");
 	       butpause.style.display='block';
 	    }
-
     </script>
-
 </head>
-
 <script src="libraries/p5.js" type="text/javascript"></script>
 <script src="libraries/p5.dom.js" type="text/javascript"></script>
 <script src="libraries/p5.sound.js" type="text/javascript"></script>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-<script src="LTG/sketch.js" type="text/javascript"></script>
-<script src="schedule/schedule.js" type="text/javascript"></script>
+<script src="sketch.js" type="text/javascript"></script>
+<!--script src="schedule/schedule.js" type="text/javascript"></script-->
 <body onload="toggle3()">
 
 <div class="backpic"></div>
@@ -157,7 +153,11 @@
     background-position: center;"></div>
 
 <audio id="pa">
+<<<<<<< HEAD
 	<source src="http://10.17.0.10:8000/stream">
+=======
+	<source src="http://10.254.19.90:8000/stream">
+>>>>>>> 1c9507500e945a5bfa1f885795bf95575434992e
 </audio>
 
 <button class="butpause" id="butpause" style="background-image: url(imgs/stop.png); background-size: 100% 100%;
@@ -168,11 +168,9 @@
     background-repeat: no-repeat;
     background-position: center;" onclick="toggle3()"></button>
 
-
 <a href="http://www.hippotest.tk/stay/" target="_blank" class="wei" style="background-image: url(per_imgs/timwei.jpg); background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;"></a>
-
 
 <!--iframe src="http://www.hippotest.tk/stay/"
 width="600vw" height="200vh" frameborder="0" scrolling="no"></iframe-->
